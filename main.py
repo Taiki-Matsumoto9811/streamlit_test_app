@@ -10,7 +10,7 @@ def uploader():
     return dataframe
 
 def main():
-    st.title("メインページ")
+    st.title("トップページ")
     dataframe = uploader()
     st.table(dataframe)
     
