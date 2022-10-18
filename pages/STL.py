@@ -3,7 +3,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
-import matplotlib.pyplot as plt
 
 def uploader():
     uploaded_file = st.file_uploader("ファイルのアップロード", type = 'csv')
