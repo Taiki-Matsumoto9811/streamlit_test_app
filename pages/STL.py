@@ -5,12 +5,12 @@ import pandas as pd
 import statsmodels.api as sm
 
 def uploader():
-    uploaded_file = st.file_uploader("ファイルのアップロード", type = 'csv')
+    uploaded_STL_file = st.file_uploader("ファイルのアップロード", type = 'csv')
     dataframe = None
     df_param = None
     date = None
-    if uploaded_file is not None:
-        dataframe = pd.read_csv(uploaded_file,encoding="shift-jis",index_col="date",parse_dates=True)
+    if uploaded_STL_file is not None:
+        dataframe = pd.read_csv(uploaded_STL_file,encoding="shift-jis",index_col="date",parse_dates=True)
 
         stl = sm.tsa.seasonal_decompose(dataframe['trend'])
         stl_o = stl.observed #観測データ（STL分解前の元のデータ）＝トレンド＋季節性＋残差
